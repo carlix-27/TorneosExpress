@@ -9,13 +9,12 @@
         /* radial-gradient(black 55%, #0000), */
     linear-gradient(
             135deg,
-            red,
-            orange,
-            yellow,
-            lime,
+            deeppink,
             cyan,
+            indigo,
             blue,
             indigo,
+            cyan,
             deeppink
     );
     background-size: 100% 0.5%, contain;
@@ -23,6 +22,16 @@
     /* background-position: 0 0, 1em 1em, 0 0; */
 }
 
+
+/* Button positioning */
+.button-te {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+/* Rest of the button styles remain the same */
 /* === removing default button style ===*/
 .button-te {
     margin: 0;
@@ -68,6 +77,17 @@
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color));
 }
+
+
+.te-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px; /* Adjust margin as needed */
+}
+
+
+
 
 nav ul li:last-child {
     margin-right: 0;

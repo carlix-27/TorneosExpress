@@ -14,11 +14,12 @@
 
 <!-- Encabezado -->
 <header class="container">
-    <!-- Menú de navegación -->
-    <button class="button-te" data-text="Awesome">
-        <span class="actual-text">&nbsp;TE&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;TE&nbsp;</span>
-    </button>
+    <div class="te-button-container">
+        <button class="button-te" data-text="Awesome">
+            <span class="actual-text">&nbsp;TE&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;TE&nbsp;</span>
+        </button>
+    </div>
     <nav>
 
         <ul>
@@ -137,34 +138,38 @@
 
 </header>
 
+<div class="container-body">
+
 <!-- Sección de Bienvenida -->
-<section id="bienvenida">
-    <h2>Bienvenido a Torneos Express</h2>
-    <p>Descubre los torneos más emocionantes y únete a la comunidad.</p>
-</section>
+    <section id="bienvenida">
+        <h2>Bienvenido a Torneos Express</h2>
+        <p>Descubre los torneos más emocionantes y únete a la comunidad.</p>
+    </section>
 
 
-<!-- Sección de Torneos -->
-<section id="torneos">
-    <h2>Torneos</h2>
-    <!-- Aquí puedes agregar contenido relacionado con los torneos -->
-    <ul id="tournament-options">
-        <li><a href="#" onclick="redirectToCreateTournament()">Crear Torneo</a></li>
-        <li><a href="misTorneos.html">Ver Mis Torneos</a></li> <!-- Nuevo enlace -->
-        <li><a href="torneos.html">Ver Todos los Torneos</a></li> <!-- Nuevo enlace -->
-    </ul>
-</section>
+    <!-- Sección de Torneos -->
+    <section id="torneos">
+        <h2>Torneos</h2>
+        <!-- Aquí puedes agregar contenido relacionado con los torneos -->
+        <ul id="tournament-options">
+            <li><a href="#" onclick="redirectToCreateTournament()">Crear Torneo</a></li>
+            <li><a href="misTorneos.html">Ver Mis Torneos</a></li> <!-- Nuevo enlace -->
+            <li><a href="torneos.html">Ver Todos los Torneos</a></li> <!-- Nuevo enlace -->
+        </ul>
+    </section>
 
-<br>
+    <br>
 
-<section id="deportes">
-    <h2>Deportes</h2>
-    <!-- Aquí puedes agregar contenido relacionado con los torneos -->
-    <ul id="sport-options">
-        <li><a href="#" onclick="createSportRedirect()">Agregar Deporte</a></li>
-        <li><a href="deportes.html">Ver Deportes</a></li> <!-- Nuevo enlace -->
-    </ul>
-</section>
+    <section id="deportes">
+        <h2>Deportes</h2>
+        <!-- Aquí puedes agregar contenido relacionado con los torneos -->
+        <ul id="sport-options">
+            <li><a href="#" onclick="createSportRedirect()">Agregar Deporte</a></li>
+            <li><a href="deportes.html">Ver Deportes</a></li> <!-- Nuevo enlace -->
+        </ul>
+    </section>
+
+</div>
 
 
 <!-- Logout Script -->
