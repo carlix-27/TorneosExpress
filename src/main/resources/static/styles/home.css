@@ -167,8 +167,6 @@ ul#sport-options li a:hover {
     background-color: rgb(227, 223, 223);
 }
 
-
-
 /* Button styles */
 .notify {
     position: absolute;
@@ -237,6 +235,3 @@ ul#sport-options li a:hover {
 .notify:active {
     transform: scale(0.8);
 }
-
-
-
