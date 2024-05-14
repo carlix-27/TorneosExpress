@@ -71,8 +71,6 @@ main {
   background-color: #5d4480; /* Darker shade of purple on hover */
 }
 
-/* Keep the existing styles */
-
 .btn-container {
   text-align: center; /* Center-align the button */
   margin-top: 20px; /* Add margin to separate from the main content */
