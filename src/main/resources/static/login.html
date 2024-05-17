@@ -5,6 +5,23 @@
 	<title>Torneos Express - Login</title>
 	<link rel="stylesheet" href="styles/styleLogin.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<script>
+		window.onload = function() {
+			// Function to get URL parameters
+			function getUrlParameter(name) {
+				name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};
+
+			// Check for success parameter
+			var successParam = getUrlParameter('success');
+			if (successParam === 'true') {
+				document.getElementById('success-message').style.display = 'block';
+			}
+		};
+	</script>
 </head>
 <body>
 
@@ -17,7 +34,7 @@
 	<a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
 	<h2>Login</h2>
 
-	<!-- Check for success message parameter -->
+	<!-- Success message div -->
 	<div id="success-message" style="color: green; margin-bottom: 10px; display: none;">Registration successful. You can now login.</div>
 
 	<!-- Error message div -->

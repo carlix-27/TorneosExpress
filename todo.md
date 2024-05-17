@@ -1,8 +1,8 @@
 # Todo
 
 ### Auth
-- [ ] Cuando haces login salta mensaje de exito pero de registracion
-- [ ] Arreglar mensaje buy premium 
+- [x] Cuando haces login salta mensaje de exito pero de registracion
+- [x] Arreglar mensaje buy premium 
 
 ### Deportes
 - [ ] En agregar deporte: especificar cantidad de jugadores (si es por equipo o entre los 2).

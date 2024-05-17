@@ -101,7 +101,7 @@
                 }));
             })
             .then(({ data, status }) => {
-                if (status === 204) {
+                if (status === 200) {
                     // No content, assume success
                     document.getElementById('upgrade-status').innerText = 'You are now a Premium member!';
                 } else if (data && data.message) {

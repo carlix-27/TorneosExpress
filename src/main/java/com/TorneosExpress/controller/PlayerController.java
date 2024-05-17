@@ -48,8 +48,7 @@ public class PlayerController {
         boolean isUpgradeSuccessful = playerService.upgradeToPremium(userId);
 
         if (isUpgradeSuccessful) {
-            String successMessage = "User upgraded to Premium successfully!";
-            return ResponseEntity.ok().body(successMessage); // Return a success message
+            return ResponseEntity.ok().body(true);
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Failed to upgrade player to Premium"); // Return an error message if failed
