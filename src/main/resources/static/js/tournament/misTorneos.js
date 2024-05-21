@@ -28,7 +28,7 @@ function cargarTorneos() {
             <p>Privacidad: ${tournament.private ? "Privado" : "Público"}</p>
             <p>Dificultad: ${tournament.difficulty}</p>
             <p>Equipos Participantes: ${tournament.participatingTeams.length}</p>
-            <p>Solicitudes de Participación: ${tournament.participationRequests.length}</p>
+            <!--<p>Solicitudes de Participación: </p>-->
             <button onclick="editarTorneo(${tournament.id})">Editar</button>
             <button onclick="borrarTorneo(${tournament.id})">Borrar</button>
         </div>
