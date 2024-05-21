@@ -37,6 +37,13 @@ public class TeamController {
     return ResponseEntity.ok().body(teams);
   }
 
+//  @GetMapping("/user/{userId}")
+//  public ResponseEntity<List<Team>> getAllTeamsOfUser(@PathVariable Long userId) {
+//    /* Gets all teams that 'user' is part of. */
+//    List<Team> teams = teamService.findByPlayers_ID(userId);
+//    return ResponseEntity.ok().body(teams);
+//  }
+
   @GetMapping("/all")
   public ResponseEntity<List<Team>> getAllTeams() {
     List<Team> teams = teamService.findAll();

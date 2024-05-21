@@ -87,6 +87,14 @@ public class Player {
         is_Enabled = enabled;
     }
 
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
+
     public Player(String name, String location, String email, String password) {
         this.name = name;
         this.location = location;
@@ -124,6 +132,9 @@ public class Player {
 
     @ManyToMany(mappedBy = "players")
     private List<Team> ownedTeams = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "players")
+    private List<Team> teams = new ArrayList<>();
 
     public Player() {}
 
