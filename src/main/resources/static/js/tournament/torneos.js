@@ -51,7 +51,7 @@ function openModal(tournamentId, isPrivate) {
     currentTournamentPrivate = isPrivate;
 
     // Obtener y llenar la lista de equipos del usuario
-    fetch('/api/teams')
+    fetch('/api/teams/all')
         .then(response => response.json())
         .then(teams => {
             const teamSelect = document.getElementById('team-select');
@@ -121,8 +121,9 @@ function enrollInTournament(tournamentId, isPrivate) {
     });
 }
 
-// Función para enviar una solicitud de acceso
 
+
+// Función para enviar una solicitud de acceso
 function sendAccessRequest(tournamentId, userId, teamId) {
     const requestPayload = {
         userId: userId,
