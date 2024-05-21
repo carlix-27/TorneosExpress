@@ -11,12 +11,51 @@
         /* Styles for error and success messages */
         #error-message,
         #success-message {
-            color: red;
             display: none;
         }
 
         .success {
             color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -26,9 +65,23 @@
     <ul id="tournament-list">
         <!-- Aquí se agregarán los torneos dinámicamente -->
     </ul>
-    <div id="error-message"></div> <!-- Agrega el elemento para mensajes de error -->
-    <div id="success-message" class="success"></div> <!-- Agrega el elemento para mensajes de éxito -->
 </div>
+
+<!-- Modal de selección de equipo -->
+<div id="teamModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Selecciona tu equipo</h3>
+        <select id="team-select">
+            <!-- Options filled dynamically with team ids and names -->
+        </select>
+        <button onclick="confirmEnrollment()">Confirmar Inscripción</button>
+
+        <div id="success-message" class="success"></div> <!-- Agrega el elemento para mensajes de éxito -->
+        <div id="error-message" class="error"></div> <!-- Agrega el elemento para mensajes de error -->
+    </div>
+</div>
+
 <script src="js/tournament/torneos.js"></script> <!-- Agrega tu archivo JavaScript -->
 </body>
 </html>
