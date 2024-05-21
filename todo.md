@@ -1,5 +1,15 @@
 # Todo
+## En progreso
+Marcos: 
+- [ ] Notificaciones
 
+Carlos:
+- [ ] Visualizar jugadores en el equipo
+- [ ] Ver - Ver Mis Torneos
+- [ ] Tema solicitud - Vinculado con la pantalla de notificaciones (Marcos)
+
+Lucas:
+- [ ] Calendario
 ### Auth
 - [x] Cuando haces login salta mensaje de exito pero de registracion
 - [x] Arreglar mensaje buy premium 
