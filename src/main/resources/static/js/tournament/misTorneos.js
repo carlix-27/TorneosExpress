@@ -25,10 +25,11 @@ function cargarTorneos() {
             <h3>${tournament.name}</h3>
             <p>Deporte: ${tournament.sport.sportName}</p>
             <p>Ubicación: ${tournament.location}</p>
-            <p>Privacidad: ${tournament.private ? "Privado" : "Público"}</p>
+            <p>Privacidad: ${tournament.isPrivate ? "Privado" : "Público"}</p>
             <p>Dificultad: ${tournament.difficulty}</p>
-            <p>Equipos Participantes: ${tournament.participatingTeams.length}</p>
-            <!--<p>Solicitudes de Participación: </p>-->
+            <p>Maxima Cantidad de Equipos: ${tournament.maxTeams}</p>
+            <p>Equipos Participantes: ${tournament.participatingTeams}</p>
+            <p>Solicitudes de Participación: ${tournament.participationRequests}</p>
             <button onclick="editarTorneo(${tournament.id})">Editar</button>
             <button onclick="borrarTorneo(${tournament.id})">Borrar</button>
         </div>

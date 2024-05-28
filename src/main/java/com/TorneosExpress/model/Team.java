@@ -1,4 +1,5 @@
 package com.TorneosExpress.model;
+import com.TorneosExpress.dto.ShortTeamDto;
 import com.TorneosExpress.dto.TeamDto;
 import com.TorneosExpress.model.shop.Article;
 
@@ -148,5 +149,9 @@ public class Team {
 
   public void setRequestedTournaments(List<Tournament> requestedTournaments) {
     this.requestedTournaments = requestedTournaments;
+  }
+
+  public ShortTeamDto toDto(){
+    return new ShortTeamDto(this.id, this.name);
   }
 }

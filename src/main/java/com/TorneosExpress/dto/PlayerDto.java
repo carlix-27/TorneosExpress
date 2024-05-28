@@ -12,7 +12,7 @@ public class PlayerDto {
     private Boolean isPremium;
     private Boolean isEnabled;
     private String password;
-    private List<Team> ownedTeams;
+    private List<Team> ownedTeams; // Debería ser un teamDto
     private boolean isCaptain;
 
     public PlayerDto(Long id, String name, String location, String email, Boolean isPremium, Boolean isEnabled, String password, List<Team> ownedTeams, boolean isCaptain) {

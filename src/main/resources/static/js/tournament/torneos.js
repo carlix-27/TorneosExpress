@@ -17,8 +17,8 @@ function fetchActiveTournaments() {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <h3>${tournament.name}</h3>
-                    <p>Deporte: ${tournament.sport.sportName}</p>
-                    <p>${tournament.private ? 'Privado' : 'Público'}</p>
+                    <p>Deporte: ${tournament.sport}</p>
+                    <p>${tournament.isPrivate ? 'Privado' : 'Público'}</p>
                 `;
 
                 // Creación del botón de inscripción

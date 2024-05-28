@@ -1,4 +1,5 @@
 package com.TorneosExpress.controller;
+import com.TorneosExpress.dto.ShortTeamDto;
 import com.TorneosExpress.dto.TeamDto;
 import com.TorneosExpress.model.Team;
 import com.TorneosExpress.model.Tournament;
@@ -45,9 +46,9 @@ public class TeamController {
 //  }
 
   @GetMapping("/all")
-  public ResponseEntity<List<Team>> getAllTeams() {
-    List<Team> teams = teamService.findAll();
-    return ResponseEntity.ok().body(teams);
+  public ResponseEntity<List<ShortTeamDto>> getAllTeams() { // debes resolverlo acá son el id, y nombre del deporte, es lo único que te interesa.
+    List<ShortTeamDto> teamDtos = teamService.findAll().stream().map(Team::toDto).toList();
+    return ResponseEntity.ok().body(teamDtos);
   }
 
   @GetMapping("/allTeams")

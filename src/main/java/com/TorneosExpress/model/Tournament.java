@@ -1,5 +1,6 @@
 package com.TorneosExpress.model;
 
+import com.TorneosExpress.dto.AllDataTeamDto;
 import com.TorneosExpress.dto.TournamentDto;
 import jakarta.persistence.*;
 import java.util.ArrayList;
@@ -179,6 +180,15 @@ public class Tournament {
 
   public Long getCreatorId() {
     return creatorId;
+  }
+
+  public TournamentDto toDto() {
+    // agarras this (el tournament) y devolves un TournamentDto
+    return new TournamentDto(this.Id, this.creatorId, this.name, this.location, this.sport, this.isPrivate, this.difficulty, this.isActive);
+  }
+
+  public AllDataTeamDto allDataTeamToDto(){
+    return new AllDataTeamDto(this.Id, this.creatorId, this.name, this.location, this.sport, this.isPrivate, this.difficulty, this.isActive, this.maxTeams, participatingTeams, participationRequests);
   }
 
 }

@@ -25,6 +25,11 @@ public class TournamentDto {
         this.isActive = isActive;
     }
 
+
+    public TournamentDto(int maxTeams){
+        this.maxTeams = maxTeams;
+    }
+
     public Long getId(){
         return id;
     }
@@ -34,6 +39,8 @@ public class TournamentDto {
     public int getMaxTeams() {
         return maxTeams;
     }
+
+    //public int getActualTeams(){ return actualTeams;}
 
     public String getName(){
         return name;

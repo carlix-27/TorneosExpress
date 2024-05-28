@@ -41,7 +41,7 @@ public class RequestController {
         } catch (NullPointerException e){ // Casos de exception que tire los métodos.
             return ResponseEntity.badRequest().body(request.getUserId() + " no encontrado");
         } catch (IllegalArgumentException e){
-            return ResponseEntity.badRequest().body("Tu equipo ya está en este torneo");
+            return ResponseEntity.badRequest().body("Tu equipo ya está en este torneo"); // no me lo tira en la página web
         } catch (Exception e){
             return ResponseEntity.status(500).body("Error interno del servidor: " + e.getMessage());
         }

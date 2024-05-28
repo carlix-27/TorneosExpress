@@ -13,7 +13,7 @@ public class TeamDto {
   private boolean isPrivate;
   private int prestigePoints;
   private Long captainId;
-  private List<Player> players;
+  private List<Player> players; // todo dto debería ser
   private List<Tournament> tournaments;
   private List<Article> articles;
   private List<Player> joinRequests;
@@ -30,6 +30,7 @@ public class TeamDto {
     this.articles = articles;
     this.joinRequests = joinRequests;
   }
+
 
   public Long getId() {
     return id;
