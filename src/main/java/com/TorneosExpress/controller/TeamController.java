@@ -1,4 +1,5 @@
 package com.TorneosExpress.controller;
+import com.TorneosExpress.dto.MyTeamsDataDto;
 import com.TorneosExpress.dto.ShortTeamDto;
 import com.TorneosExpress.dto.TeamDto;
 import com.TorneosExpress.model.Team;
@@ -32,9 +33,9 @@ public class TeamController {
   }
 
   @GetMapping("/user/{userId}")
-  public ResponseEntity<List<Team>> getTeamsByUser(@PathVariable Long userId) {
+  public ResponseEntity<List<MyTeamsDataDto>> getTeamsByUser(@PathVariable Long userId) {
     /* Gets all teams that 'user' is captain of. */
-    List<Team> teams = teamService.findByCaptainId(userId);
+    List<MyTeamsDataDto> teams = teamService.findByCaptainId(userId).stream().map(Team::myTeamsDataDto).toList();
     return ResponseEntity.ok().body(teams);
   }
 
@@ -46,8 +47,8 @@ public class TeamController {
 //  }
 
   @GetMapping("/all")
-  public ResponseEntity<List<ShortTeamDto>> getAllTeams() { // debes resolverlo acá son el id, y nombre del deporte, es lo único que te interesa.
-    List<ShortTeamDto> teamDtos = teamService.findAll().stream().map(Team::toDto).toList();
+  public ResponseEntity<List<MyTeamsDataDto>> getAllTeams() { // debes resolverlo acá son el id, y nombre del deporte, es lo único que te interesa.
+    List<MyTeamsDataDto> teamDtos = teamService.findAll().stream().map(Team::myTeamsDataDto).toList();
     return ResponseEntity.ok().body(teamDtos);
   }
 

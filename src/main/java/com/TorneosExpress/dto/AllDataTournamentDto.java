@@ -7,7 +7,7 @@ import com.TorneosExpress.model.Team;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AllDataTeamDto {
+public class AllDataTournamentDto {
 
     private Long id;
     private Long creatorId;
@@ -23,7 +23,7 @@ public class AllDataTeamDto {
 
 
 
-    public AllDataTeamDto(Long id, Long creatorId, String name, String location, Sport sport, boolean isPrivate, Difficulty difficulty, boolean isActive, int maxTeams, List<Team> participatingTeams, List<Team> participationRequests) {
+    public AllDataTournamentDto(Long id, Long creatorId, String name, String location, Sport sport, boolean isPrivate, Difficulty difficulty, boolean isActive, int maxTeams, List<Team> participatingTeams, List<Team> participationRequests) {
         this.id = id;
         this.creatorId = creatorId;
         this.name = name;
@@ -36,11 +36,46 @@ public class AllDataTeamDto {
 
         // Convert List<Team> to List<ShortTeamDto>
         this.participatingTeamsShortData = participatingTeams.stream()
-                .map(team -> new ShortTeamDto(id, name))
+                .map(team -> new ShortTeamDto(team.getId(), team.getName()))
                 .collect(Collectors.toList());
 
         this.participationRequestsShortData = participationRequests.stream()
-                .map(team -> new ShortTeamDto(id, name))
+                .map(team -> new ShortTeamDto(team.getId(), team.getName()))
                 .collect(Collectors.toList());
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public Long getCreatorId(){
+        return creatorId;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public String getLocation(){
+        return location;
+    }
+    public Sport getSport(){
+        return sport;
+    }
+    public boolean getIsPrivate(){
+        return isPrivate;
+    }
+    public Difficulty getDifficulty(){
+        return difficulty;
+    }
+    public int getMaxTeams(){
+        return maxTeams;
+    }
+
+    public List<ShortTeamDto> getParticipatingTeamsShortData(){
+        return participatingTeamsShortData;
+    }
+
+    public List<ShortTeamDto> getParticipationRequestsShortData(){
+        return participationRequestsShortData;
     }
 }

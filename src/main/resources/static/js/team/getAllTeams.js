@@ -18,7 +18,7 @@ function loadTeams() {
                     <div>
                         <h3>${team.name}</h3>
                         <p>Ubicación: ${team.location}</p>
-                        <p>Privacidad: ${team.private ? "Privado" : "Público"}</p>
+                        <p>Privacidad: ${team.isPrivate ? "Privado" : "Público"}</p>
                     </div>
                 `;
                 listaEquipos.appendChild(li);

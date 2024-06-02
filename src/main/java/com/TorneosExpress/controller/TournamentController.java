@@ -3,7 +3,6 @@ package com.TorneosExpress.controller;
 import com.TorneosExpress.dto.*;
 import com.TorneosExpress.model.Tournament;
 import com.TorneosExpress.service.TournamentService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,8 +35,8 @@ public class TournamentController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<AllDataTeamDto>> getTournamentsByUser(@PathVariable Long userId) {
-        List<AllDataTeamDto> tournaments = tournamentService.getTournamentsByUser(userId).stream().map(Tournament::allDataTeamToDto).toList();
+    public ResponseEntity<List<AllDataTournamentDto>> getTournamentsByUser(@PathVariable Long userId) {
+        List<AllDataTournamentDto> tournaments = tournamentService.getTournamentsByUser(userId).stream().map(Tournament::allDataTeamToDto).toList();
         return ResponseEntity.ok().body(tournaments);
     }
 

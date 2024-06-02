@@ -1,4 +1,5 @@
 package com.TorneosExpress.model;
+import com.TorneosExpress.dto.MyTeamsDataDto;
 import com.TorneosExpress.dto.ShortTeamDto;
 import com.TorneosExpress.dto.TeamDto;
 import com.TorneosExpress.model.shop.Article;
@@ -154,4 +155,9 @@ public class Team {
   public ShortTeamDto toDto(){
     return new ShortTeamDto(this.id, this.name);
   }
+
+  public MyTeamsDataDto myTeamsDataDto(){
+    return new MyTeamsDataDto(this.id, this.name, this.location, this.isPrivate);
+  }
+
 }

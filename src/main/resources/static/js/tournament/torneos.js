@@ -25,7 +25,7 @@ function fetchActiveTournaments() {
                 const enrollButton = document.createElement('button');
                 enrollButton.textContent = 'Inscribirse';
                 enrollButton.addEventListener('click', () => {
-                    openModal(tournament.id, tournament.private);
+                    openModal(tournament.id, tournament.isPrivate);
                 });
 
                 // Botón a la lista
