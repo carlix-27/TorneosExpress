@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/team/styleCreateTeam.css">
+    <title>Torneos Express - Equipos</title>
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Torneos Express - Equipos</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="create-team-box">
+
+    <a href="javascript: goBack()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    <h2>Crear Equipo</h2>
+
+    <!-- Check for success message parameter -->
+    <div id="success-message" style="color: green; margin-bottom: 10px; display: none;">Team created successfully.</div>
+
+    <!-- Error message div -->
+    <div id="error-message" style="color: red; margin-bottom: 10px; display: none;">Error while creating team.</div>
+
+    <form id="add-team-form">
+        <div class="form-group">
+            <label for="team-name">Nombre del Equipo:</label>
+            <input type="text" id="team-name" name="team-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sport">Deporte:</label>
+            <select id="sport" name="sport" required>
+                <!-- Sport options will be dynamically populated -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="team-location">Ubicación:</label>
+            <input type="text" id="team-location" name="team-location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="privacy">Privacidad:</label>
+            <input type="checkbox" id="privacy" name="privacy"> Equipo privado
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Crear Equipo</button>
+        </div>
+    </form>
+</div>
+<script src="js/team/createTeam.js"></script>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+    // Fetch sports and populate dropdown on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        fetchSports();
+    });
+</script>
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+</body>
+</html>

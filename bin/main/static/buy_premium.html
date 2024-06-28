@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/auth/checkRedirect.js"></script>
+    <title>Buy Premium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        ul {
+            color: #666;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3d1f7f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Add margin bottom for spacing */
+        }
+        .button:hover {
+            background-color: #5a42a5;
+        }
+    </style>
+</head>
+<body>
+<h1>Upgrade to Premium</h1>
+<p>Welcome to Torneos Express!</p>
+
+<h2>Benefits of Premium:</h2>
+<ul>
+    <li>Access to advanced tournaments</li>
+    <li>Priority registration</li>
+    <li>Customize your profile</li>
+    <!-- Add more benefits as needed -->
+</ul>
+
+<h2>Contact us to Upgrade:</h2>
+<ul>
+    <li>Email: premium@torneosexpress.com</li>
+    <li>Phone: 1-800-PREMIUM</li>
+</ul>
+
+<!-- Form for upgrading -->
+<form id="upgrade-form">
+    <!-- Input for UserId (you can remove this if you don't need user input) -->
+    <!-- <input type="text" id="userId" placeholder="Enter User ID"> -->
+    <!-- Button to Buy Premium -->
+    <button type="button" class="button" onclick="buyPremium()">Buy Premium</button>
+</form>
+
+<!-- Back button -->
+<button type="button" class="button" onclick="goBack()">Back</button>
+
+<p id="upgrade-status"></p>
+
+<script>
+    function buyPremium() {
+        // Fetch userId from localStorage
+        const userId = localStorage.getItem("userId");
+
+        // Check if userId is available
+        if (!userId) {
+            console.error('User ID not found in localStorage');
+            document.getElementById('upgrade-status').innerText = 'User ID not found. Please log in.';
+            return;
+        }
+
+        fetch(`/api/user/upgrade/${userId}`, { // Update the URL with the actual userId
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}), // No need to send data in the body since it's based on the userId
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to upgrade');
+                }
+                // Return the response to handle further processing
+                return response;
+            })
+            .then(response => {
+                // Check if response has a message in JSON format
+                return response.json().then(data => ({
+                    data: data,
+                    status: response.status
+                }));
+            })
+            .then(({ data, status }) => {
+                if (status === 200) {
+                    // No content, assume success
+                    document.getElementById('upgrade-status').innerText = 'You are now a Premium member!';
+                } else if (data && data.message) {
+                    document.getElementById('upgrade-status').innerText = data.message;
+                }
+            })
+            .catch(error => {
+                console.error('Upgrade failed:', error);
+                document.getElementById('upgrade-status').innerText = 'Upgrade failed. Please try again later.';
+            });
+    }
+
+    // Function to go back
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

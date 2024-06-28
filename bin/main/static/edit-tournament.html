@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Tournament - Torneos Express</title>
+        <link rel="stylesheet" href="styles/tournament/edit-tournament.css"> <!-- Include your CSS file -->
+        <script src="js/auth/checkRedirect.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Torneos Express</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Torneos</a></li>
+                    <li><a href="equipo.html">Equipos</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="calendario.html">Calendario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <form id="edit-tournament-form" class="update-tournament-box" action="/api/tournaments/update" method="post">
+            <!-- Hidden input for tournament ID -->
+            <input type="hidden" id="tournament-id" name="tournament-id" value="">
+
+            <div class="form-group">
+                <label for="tournament-name">Tournament Name:</label>
+                <input type="text" id="tournament-name" name="tournament-name" required>
+            </div>
+            <div class="form-group">
+                <label for="sport">Sport:</label>
+                <select id="sport" name="sport" required>
+                    <!-- Sports options will be dynamically populated here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="privacy">Privacy:</label>
+                <input type="checkbox" id="privacy" name="privacy"> Private
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="BEGINNER">Beginner</option>
+                    <option value="INTERMEDIATE">Intermediate</option>
+                    <option value="ADVANCED">Advanced</option>
+                    <option value="EXPERT">Expert</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+        <script src="js/tournament/editTournament.js"></script> <!-- Include your editTournament.js script -->
+    </body>
+</html>

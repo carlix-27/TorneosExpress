@@ -37,12 +37,20 @@ nav a {
   padding: 10px 20px;
   border-radius: 5px;
   margin-left: 20px;
-  background-color: #7a5c9c; /* Light purple for login and register buttons */
+  background-color: #7a5c9c; /* Light purple for login button */
   transition: background-color 0.3s;
 }
 
 nav a:hover {
   background-color: #5d4480; /* Darker shade of purple on hover */
+}
+
+nav a.strong-btn {
+  background-color: #4a2c7c; /* Stronger purple for "Jugar Ahora" button */
+}
+
+nav a.strong-btn:hover {
+  background-color: #2c1c4c; /* Darker shade of strong purple on hover */
 }
 
 main {
@@ -71,10 +79,7 @@ main {
   background-color: #5d4480; /* Darker shade of purple on hover */
 }
 
-/* Keep the existing styles */
-
 .btn-container {
   text-align: center; /* Center-align the button */
   margin-top: 20px; /* Add margin to separate from the main content */
 }
-

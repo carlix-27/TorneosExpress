@@ -1,0 +1,134 @@
+/* CSS for the horizontal navbar */
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/********/
+
+
+/* Estilos para la sección de Bienvenida */
+#bienvenida {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#bienvenida h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* STYLES FOR LIST */
+
+section#torneos {
+    padding: 20px;
+}
+
+section#torneos h2 {
+    margin-top: 0;
+}
+
+ul#tournament-options {
+    list-style: none;
+    padding: 0;
+}
+
+ul#tournament-options li {
+    margin-bottom: 10px;
+}
+
+ul#tournament-options li a {
+    display: block;
+    background-color: #3d1f7f;
+    color: #fff;
+    padding: 8px 12px; /* Adjusted padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 150px; /* Reduced width */
+}
+
+ul#tournament-options li a:hover {
+    background-color: #342160;
+}
+
+section#deportes {
+    padding: 20px;
+}
+
+section#deportes h2 {
+    margin-top: 0;
+}
+
+ul#sport-options {
+    list-style: none;
+    padding: 0;
+}
+
+ul#sport-options li {
+    margin-bottom: 10px;
+}
+
+ul#sport-options li a {
+    display: block;
+    background-color: #3d1f7f;
+    color: #fff;
+    padding: 8px 12px; /* Adjusted padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 150px; /* Reduced width */
+}
+
+ul#sport-options li a:hover {
+    background-color: #342160;
+}
+
+

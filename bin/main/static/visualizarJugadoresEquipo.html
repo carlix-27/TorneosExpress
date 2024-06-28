@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Jugadores</title>
+    <script src="js/team/visualizarJugadoresEquipo.js"></script>
+    <link rel="stylesheet" href="styles/team/visualizarJugadoresEquipo.css">
+</head>
+<body>
+
+<header>
+    <h1>Torneos Express</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+
+<input type="hidden" id="teamId" name="team-id" value="">
+
+<main>
+    <section>
+        <h2>Jugadores del Equipo</h2>
+        <table id="playersTable">
+            <thead>
+            <tr>
+                <th>Jugadores</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Los datos de los jugadores se cargarán aquí -->
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="js/team/visualizarJugadoresEquipo.js"></script>
+</body>
+</html>

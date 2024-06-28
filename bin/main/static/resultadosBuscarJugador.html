@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Torneos Express - Resultados</title>
+    <link rel="stylesheet" href="styles/resultadosBuscarJugador.css">
+    <script src="js/resultadosBuscarJugador.js"></script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Torneos Express - Buscar</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="search-player-box">
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    <h2>Buscar Jugador</h2>
+
+    <form id="find-player-form" method="get">
+        <div class="form-group">
+            <label for="player-name">Nombre del jugador:</label>
+            <input type="text" id="player-name" name="player-name" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Buscar</button>
+        </div>
+    </form>
+</div>
+
+<!-- Contenido de la página -->
+<div id="resultados">
+    <section id="results">
+        <ul id="lista-jugadores">
+            <!-- Los torneos se cargarán dinámicamente aquí -->
+        </ul>
+    </section>
+</div>
+
+
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+</body>
+</html>

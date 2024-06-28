@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Torneos Express - Login</title>
+	<link rel="stylesheet" href="styles/styleLogin.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<script>
+		window.onload = function() {
+			// Function to get URL parameters
+			function getUrlParameter(name) {
+				name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+				var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				var results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};
+
+			// Check for success parameter
+			var successParam = getUrlParameter('success');
+			if (successParam === 'true') {
+				document.getElementById('success-message').style.display = 'block';
+			}
+		};
+	</script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+	<h1>Torneos Express</h1>
+</header>
+
+<div class="login-box">
+	<a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+	<h2>Login</h2>
+
+	<!-- Success message div -->
+	<div id="success-message" style="color: green; margin-bottom: 10px; display: none;">Registration successful. You can now login.</div>
+
+	<!-- Error message div -->
+	<div id="error-message" style="color: red; margin-bottom: 10px; display: none;">Invalid email or password. Please try again.</div>
+
+	<form id="login-form" action="/api/auth/login" method="post">
+		<div class="textbox">
+			<i class="fas fa-user"></i>
+			<input type="text" id="email" placeholder="Email" required>
+		</div>
+		<div class="textbox">
+			<i class="fas fa-lock"></i>
+			<input type="password" id="password" placeholder="Password" required>
+		</div>
+		<input type="button" value="Login" name="login_button" onclick="login()">
+	</form>
+
+	<div class="register-link">
+		<p><a href="register.html">Register here</a></p>
+	</div>
+</div>
+<script src="js/auth/login.js"></script>
+</body>
+</html>

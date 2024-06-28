@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos Express - Torneo - Agregar Deporte</title>
+
+    <link rel="stylesheet" href="styles/sport/addSport.css">
+    <link rel="stylesheet" href="styles/messages.css">
+    <link rel="stylesheet" href="styles/backButton.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script type="module">
+        import { addSport } from './js/sport/addSport.js';
+        window.addSport = addSport;
+    </script>
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+<header>
+    <h1>Torneos Express - Deportes</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="create-sport-box">
+    <div class="header-row">
+        <a href="home.html" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2>Agregar Deporte</h2>
+    </div>
+
+    <div id="successMessage" style="display: none; color: green; margin-top: 10px;"></div>
+    <div id="errorMessage" style="display: none; color: red; margin-top: 10px;"></div>
+
+    <form id="add-sport-form">
+        <div class="form-group">
+            <label for="sport-name">Nombre:</label>
+            <input type="text" id="sport-name" name="sport-name" required>
+        </div>
+        <div class="form-group">
+            <label for="num_players">Cantidad de Jugadores:</label>
+            <input type="number" id="num_players" name="num_players" min="1" required>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="addSport()">Agregar Deporte</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

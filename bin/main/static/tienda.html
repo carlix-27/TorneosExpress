@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorneosExpress</title>
+    <link rel="stylesheet" href="./styles/tienda.css">
+</head>
+<body>
+<header>
+    <h1>Torneos Express - Tienda</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Torneos</a></li>
+            <li><a href="equipo.html">Equipos</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="buscar.html">Buscar</a> </li>
+            <li><a href="notifications.html">Notificaciones</a></li>
+            <!-- Logout Button -->
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="products" class="container">
+        <h2 class="section-title">Ventajas disponibles</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="/img/penal.webp" alt="Product 1">
+                <h3>Penal</h3>
+                <p>25 puntos</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item">
+                <img src="/img/3v3.webp" alt="Product 2">
+                <h3>3 vs 3</h3>
+                <p>15 puntos</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item">
+                <img src="/img/1v1.webp" alt="Product 3">
+                <h3>1 vs 1</h3>
+                <p>20 puntos</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item">
+                <img src="/img/freekick.webp" alt="Product 4">
+                <h3>Tiro libre</h3>
+                <p>10 puntos</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item">
+                <img src="/img/redcard.webp" alt="Product 5">
+                <h3>Expulsar 2 minutos</h3>
+                <p>25 puntos</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-item">
+                <img src="/img/corner.webp" alt="Product 6">
+                <h3>Corner</h3>
+                <p>10 puntos</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+</body>
+</html>

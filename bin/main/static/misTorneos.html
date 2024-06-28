@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Torneos - Torneos Express</title>
+    <link rel="stylesheet" href="styles/tournament/misTorneos.css">
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Mis Torneos</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Contenido de la página -->
+<section id="mis-torneos">
+    <h2>Tus Torneos</h2>
+    <ul id="lista-torneos">
+        <!-- Los torneos se cargarán dinámicamente aquí -->
+    </ul>
+</section>
+
+<!-- Scripts -->
+<script src="js/tournament/misTorneos.js"></script> <!-- Agregar el script para manejar los torneos -->
+
+</body>
+</html>

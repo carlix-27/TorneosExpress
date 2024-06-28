@@ -35,7 +35,7 @@ function createTournament() {
 
     // Check if tournament name is blank
     if (!name.trim()) {
-        document.getElementById('error-message').innerText = "Tournament name cannot be blank.";
+        document.getElementById('error-message').innerText = "El nombre del torneo no puede ser vacio";
         document.getElementById('error-message').style.display = 'block';
         document.getElementById('success-message').style.display = 'none';
         return;
@@ -65,14 +65,14 @@ function createTournament() {
                     console.log('Tournament created:', createdTournament);
 
                     // Display success message in green
-                    document.getElementById('success-message').innerText = "Tournament created successfully!";
+                    document.getElementById('success-message').innerText = "Torneo creado con éxito!";
                     document.getElementById('success-message').style.color = 'green';
                     document.getElementById('success-message').style.display = 'block';
                     document.getElementById('error-message').style.display = 'none';
                     document.getElementById('create-tournament-form').reset();
                 } else if (xhr.status === 409) {
                     // Conflict - Tournament name must be unique
-                    document.getElementById('error-message').innerText = "Tournament name must be unique. Please choose a different name.";
+                    document.getElementById('error-message').innerText = "El nombre del torneo debe ser único, por favor ingresar un nuevo nombre. ";
                     document.getElementById('error-message').style.color = 'red';
                     document.getElementById('error-message').style.display = 'block';
                     document.getElementById('success-message').style.display = 'none';

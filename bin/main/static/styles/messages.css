@@ -1,0 +1,10 @@
+#error-message,
+#success-message{
+    color: red;
+    display: none;
+}
+
+.success {
+    color: green;
+}
+

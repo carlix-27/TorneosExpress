@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tournament - Torneos Express</title>
+    <link rel="stylesheet" href="styles/team/editar-equipo.css">
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Torneos Express</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Torneos</a></li>
+                <li><a href="equipo.html">Equipos</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="update-team-box">
+        <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2>Editar equipo</h2>
+
+        <form id="edit-team-form" action="/api/teams/update" method="post">
+            <!-- Hidden input for tournament ID -->
+            <input type="hidden" id="team-id" name="team-id" value="">
+
+            <div class="form-group">
+                <label for="team-name">Team name:</label>
+                <input type="text" id="team-name" name="team-name" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="privacy">Privacy:</label>
+                <input type="checkbox" id="privacy" name="privacy"> Private team
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/team/editarEquipo.js"></script>
+</body>
+</html>

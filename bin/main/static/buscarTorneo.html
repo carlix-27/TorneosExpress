@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Torneos Express - Buscar Torneo</title>
+    <link rel="stylesheet" href="styles/tournament/buscarTorneo.css">
+    <script src="js/search/buscarTorneo.js"></script>
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Torneos Express - Equipos</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="search-tournament-box">
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    <h2>Buscar Torneo</h2>
+
+    <form id="find-tournament-form" method="get">
+        <div class="form-group">
+            <label for="tournament-name">Nombre del torneo:</label>
+            <input type="text" id="tournament-name" name="tournament-name">
+        </div>
+
+        <div class="form-group">
+            <label for="tournament-type">Tipo de torneo:</label>
+            <select id="tournament-type" name="tournament-type">
+                <option value="all">Todos</option>
+                <option value="public">Público</option>
+                <option value="private">Privado</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tournament-sport">Deporte:</label>
+            <input type="text" id="tournament-sport" name="tournament-sport">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Buscar</button>
+        </div>
+    </form>
+
+</div>
+
+<!-- Contenido de la página -->
+<section id="results">
+    <ul id="lista-torneos">
+        <!-- Los torneos se cargarán dinámicamente aquí -->
+    </ul>
+</section>
+
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+</body>
+</html>

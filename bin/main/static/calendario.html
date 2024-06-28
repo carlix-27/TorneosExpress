@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos Express</title>
+    <link rel="stylesheet" href="styles/tournament/calendario.css">
+    <script src="js/tournament/loadCalendar.js"></script>
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h1>Torneos Express - Torneos</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="calendar">
+        <button type="button" id="back-button"> Volver </button>
+        <div id="calendar-div">
+            <ul id="calendar-result">
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- Logout Script -->
+    <script>
+        function logout() {
+            localStorage.removeItem("userId"); // Remove userId from localStorage
+            window.location.href = "login.html"; // Redirect to login page after logout
+        }
+    </script>
+</body>

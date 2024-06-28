@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/team/equipo.css">
+    <title>Torneos Express - Home</title>
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Torneos Express</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Torneos</a></li>
+                <li><a href="equipo.html">Equipos</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="buscar.html">Buscar</a> </li>
+                <li><a href="notifications.html">Notificaciones</a> </li>
+                <!-- Logout Button -->
+                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="equipos">
+        <h2>Equipos</h2>
+        <ul id="team-options">
+            <li> <a href = "crearEquipo.html">Crear Equipo</a> </li>
+            <li> <a href = "misEquipos.html">Ver mis equipos</a> </li>
+            <li> <a href = "getAllTeams.html">Ver todos los equipos</a> </li>
+        </ul>
+    </section>
+
+    <!-- Logout Script -->
+    <script>
+        function logout() {
+            localStorage.removeItem("userId"); // Remove userId from localStorage
+            window.location.href = "login.html"; // Redirect to login page after logout
+        }
+    </script>
+
+</body>

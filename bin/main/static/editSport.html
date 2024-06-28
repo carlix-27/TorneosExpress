@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Sport - Torneos Express</title>
+    <link rel="stylesheet" href="styles/edit-sport.css"> <!-- Include your CSS file -->
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Edit Sport</h1>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="deportes.html">Back to My Sports</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Content Section -->
+<section id="edit-sport-section">
+    <h2>Edit Sport Details</h2>
+    <form id="edit-sport-form">
+
+        <!-- Hidden input for sport ID -->
+        <input type="hidden" id="sport-id" name="sport-id" value="">
+
+        <div class="form-group">
+            <label for="sport-name">Sport Name:</label>
+            <input type="text" id="sport-name" name="sport-name" required>
+        </div>
+        <div class="form-group">
+            <label for="num_players">Number of Players:</label>
+            <input type="number" id="num_players" name="num_players" min="1" required>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="updateSport()">Save Changes</button>
+        </div>
+    </form>
+</section>
+
+<!-- Scripts -->
+<script src="js/sport/updateSport.js"></script> <!-- Include your editSport.js script -->
+</body>
+</html>

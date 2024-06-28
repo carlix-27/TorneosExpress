@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos Express - Buscar</title>
+    <link rel="stylesheet" href="styles/buscar.css">
+    <script src="js/auth/checkRedirect.js"></script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Torneos Express</h1>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Torneos</a></li>
+            <li><a href="equipo.html">Equipos</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="buscar.html">Buscar</a> </li>
+            <li><a href="notifications.html">Notificaciones</a> </li>
+            <!-- Logout Button -->
+            <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="busqueda">
+    <h2>Buscar</h2>
+    <ul id="search-options">
+        <li> <a href = "buscarEquipo.html">Buscar equipo</a> </li>
+        <li> <a href = "buscarTorneo.html">Buscar torneo</a> </li>
+        <li> <a href = "buscarJugador.html">Buscar jugador</a> </li>
+        <li> <a href = "manejarInvitacionesJugador.html">Invitaciones Personales</a> </li>
+    </ul>
+</section>
+
+<!-- Logout Script -->
+<script>
+    function logout() {
+        localStorage.removeItem("userId"); // Remove userId from localStorage
+        window.location.href = "login.html"; // Redirect to login page after logout
+    }
+</script>
+
+</body>
+</html>
