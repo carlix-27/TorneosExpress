@@ -72,16 +72,19 @@ function createTournament() {
         return
     }
 
-    const today = new Date();
+    // TODO: Necesito poder crear torneos, con fechas de hace bastante, para poder tener el torneo completo, sin la necesidad de esperar a otros dias para llenar los datos.
+    // Ahorro el chequeo del calendar. Sirve para demo, es decir, torneos ya creados, y para testear los otros tipos de torneos.
+
+    // const today = new Date();
     const selectedDate = new Date(date);
 
-    today.setHours(0, 0, 0, 0);
+    // today.setHours(0, 0, 0, 0);
     selectedDate.setHours(0, 0, 0, 0);
 
-    if (selectedDate < today) {
-        displayErrorMessage("La fecha del torneo no puede ser anterior a la fecha actual.");
-        return;
-    }
+    // if (selectedDate < today) {
+        // displayErrorMessage("La fecha del torneo no puede ser anterior a la fecha actual.");
+        // return;
+    // }
 
     if (maxTeams < 0) {
         displayErrorMessage("No se puede ingresar números negativos")

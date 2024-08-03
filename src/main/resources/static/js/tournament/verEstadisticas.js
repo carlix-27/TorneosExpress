@@ -35,15 +35,21 @@ function populateMatches(matches) {
 
             // Nombre del equipo 1 y su puntaje
             const team1Text = `<span class="team-name">${match.team1.name}</span> ${match.firstTeamScore}`;
+            console.log("Team 1 Text: ", team1Text);
 
             // Nombre del equipo 2 y su puntaje
             const team2Text = `${match.secondTeamScore} <span class="team-name">${match.team2.name}</span>`;
+            console.log("Team 2 Text: ", team2Text);
 
             listItem.innerHTML = `${team1Text} - ${team2Text}`;
+            console.log("List Item: ", listItem);
             listaPartidosTerminados.appendChild(listItem);
         } else {
             const listItem = document.createElement('li');
             listItem.textContent = `${match.team1.name} vs ${match.team2.name}`;
+            console.log("List Item: (verEstadisticas_js)", listItem);
+            console.log("Lista Partidos Pendientes: ", listaPartidosPendientes);
+            console.log("Lista Partidos terminados: ", listaPartidosTerminados);
             listaPartidosPendientes.appendChild(listItem);
         }
     });
